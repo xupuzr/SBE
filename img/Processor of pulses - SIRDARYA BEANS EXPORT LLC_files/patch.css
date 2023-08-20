@@ -1,0 +1,178 @@
+html .menuTopWrapper2__menuTop ul {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuTopWrapper2__menuTop ul li a:hover {
+  background-color: rgb(10, 9, 9);
+}
+
+html .topslider_wr .topslider li .title {
+  color: rgb(52, 52, 52);
+}
+
+html .topslider_wr .topslider li .topslid_but {
+  background-color: rgb(255, 163, 40);
+}
+
+html .topslider_wr .topslider .owl-prev:hover {
+  background-image: url("./e58a76021c4b0994b41bb5cdc1492036.svg");
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+}
+
+html .topslider_wr .topslider .owl-next:hover {
+  background-image: url("./e58a76021c4b0994b41bb5cdc1492036.svg");
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+}
+
+html .advatages_block_wr .advatages_block_in .advatages_block .block .number {
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+}
+
+html .advatages_block_wr .advatages_block_in .advatages_text .but {
+  background-color: rgb(255, 163, 40);
+}
+
+html .botslider_wr .botslider .owl-dots .owl-dot.active {
+  background-color: rgb(52, 52, 52);
+}
+
+html .rev_block_wr .rev_block_in .rev_block .title {
+  color: rgb(52, 52, 52);
+}
+
+html .rev_block_wr .rev_block_in .more {
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+}
+
+html .rev_block_wr .rev_block_in .more::before {
+  background-image: url("./c2b1902a69f08fbd6ef253a6774b8bd3.svg");
+}
+
+html .menuBotWrapper {
+  background-color: rgb(52, 52, 52);
+}
+
+html .menuBotWrapper__menuBot > li.s3-menu-allin-active > a {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuBotWrapper__menuBot > li.active > a {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuBotWrapper__menuBot > li > a:hover {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuBotWrapper__menuBot ul {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuBotWrapper__menuBot ul li a:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+html .form_wrap .form_block .tpl-anketa .tpl-field.tpl-field-button .tpl-form-button {
+  background-color: rgb(255, 163, 40);
+}
+
+html .form_wrap2 .form_block2 .tpl-anketa .tpl-field.tpl-field-button .tpl-form-button {
+  background-image: linear-gradient(rgb(255, 163, 40), rgb(243, 139, 0));
+}
+
+html .form_block .form_in .close {
+  background-image: url("./cb4c7606c43ed53618f05ef63a3195df.svg");
+}
+
+html .form_block .tpl-anketa .tpl-field.tpl-field-button .tpl-form-button {
+  background-color: rgb(255, 163, 40);
+}
+
+html .topslider_wr .topslider li .but {
+  background-color: rgb(255, 163, 40);
+}
+
+html .top_pic_block .second_phone .phone_but {
+  background-color: rgb(255, 163, 40);
+}
+
+html .site-header .top_block_wr {
+  border-top-color: rgb(52, 52, 52);
+}
+
+html .site-header .tel_block::before {
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+  background-image: url("./49599132a941f210559d7a207bfece53.svg");
+}
+
+html .site-header__address::before {
+  border-top-color: rgb(255, 163, 40);
+  border-right-color: rgb(255, 163, 40);
+  border-bottom-color: rgb(255, 163, 40);
+  border-left-color: rgb(255, 163, 40);
+  background-image: url("./e8e92b96f6189ed3670d9cc0ea9101fa.svg");
+}
+
+html .top_pic_block .form_phone .tpl-anketa .tpl-field.tpl-field-button .tpl-form-button {
+  background-color: rgb(255, 163, 40);
+}
+
+html .mobile_form span {
+  background-color: rgb(255, 163, 40);
+}
+
+html .menuTopWrapper {
+  background-color: rgb(52, 52, 52);
+}
+
+html .menuTopWrapper__menuTop > li.s3-menu-allin-active > a {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuTopWrapper__menuTop > li.active > a {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuTopWrapper__menuTop > li > a:hover {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuTopWrapper__menuTop ul {
+  background-color: rgb(27, 21, 21);
+}
+
+html .menuTopWrapper__menuTop ul li a:hover {
+  background-color: rgb(1, 1, 1);
+}
+
+html .menu_block {
+  background-color: rgb(52, 52, 52);
+}
+
+html .burger {
+  background-color: rgb(27, 21, 21);
+}
+
+html .burger.opened {
+  background-color: rgb(10, 9, 9);
+}
+
+html .menuTopWrapper2 {
+  background-color: rgb(52, 52, 52);
+}
+

@@ -1,0 +1,394 @@
+@import'font.css';
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 120vh;
+}
+.appr{
+    margin-top: 90px;
+    background: #156f5b;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom:100px ;
+    height: 60vh;
+}
+.header{
+    padding: 15px 0;
+    position: relative;
+    overflow: hidden;
+}
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.header__menu{
+    display: flex;
+    gap: 60px; 
+}
+.header__link{
+    color: rgb(255, 255, 255);
+    font-family:  'Fut' ;
+    font-weight: 500;
+    font-size: 18px;
+    transition: .2s;
+}
+.header__link:hover{
+    color: #156f5b;
+    font-family: 'Fut';
+    font-weight: 500;
+    font-size: 18px;
+}
+.header__logo{
+    width: 490px;
+}
+.span{
+    margin-top: 20px;
+}
+.span a{
+    color: white;
+    background: #156f5b;
+    padding: 12px 24px; 
+    border-radius: 4px;
+    transition: .4s;
+    font-family: 'fut';
+    font-weight: 500;
+    margin-top: 40px;
+}
+.span a:hover{
+    color: #156f5b;
+    background: rgb(204, 204, 204);
+    padding: 12px 24px; 
+    border-radius: 4px;
+}
+.intro{
+    height: 50vh;
+    padding: 15px 0;
+    margin-top: 50px;
+
+}
+.intro .container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 100px;
+}
+.intro__descr{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+.intro__title{
+    font-family: 'fut';
+    font-weight: 500;
+    font-size: 60px;
+    color: #ffffff;
+}
+.intro__txt{
+    color: rgb(134, 131, 131);
+    width: 547px;
+    font-family: 'fut';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.intro__btn{
+    color: white;
+    background: #156f5b;
+    padding: 12px 24px; 
+    border-radius: 4px;
+    transition: .4s;
+    font-family: 'fut';
+    width: 170px;
+    font-weight: 500;
+}
+.intro__btn:hover{
+    color: #156f5b;
+    background: rgb(204, 204, 204);
+    padding: 12px 24px; 
+    border-radius: 4px;
+    transition: .4s;
+    font-family: 'fut';
+    width: 170px;
+}
+.intro__img{
+    vertical-align: middle;
+    width: 301px;
+    height: 301px;
+    border-radius: 10px;
+}
+.feature{
+    margin-top: 70px;
+}
+.feature__img{
+    width: 150px;
+    height: 150px;
+}
+.feature__title{
+    font-family: 'Montss';
+    font-weight: 700;
+}
+.feature .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.appr__title{
+    font-family: 'Montss';
+    font-weight: 700;
+    color: white;
+    font-size: 40px;
+}
+.appr__btn{
+    color: white;
+    background: #156f5b;
+    padding: 12px 24px; 
+    border-radius: 4px;
+    transition: .4s;
+    font-family: 'fut';
+    font-weight: 500; 
+}
+.appr__btn:hover{
+    color: #156f5b;
+    background: rgb(204, 204, 204);
+    padding: 12px 24px; 
+    border-radius: 4px;
+    transition: .4s;
+    font-family: 'fut';
+    font-weight: 500;   
+}
+.appr__desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__title{
+    font-family: 'fut';
+    font-weight: 500; 
+    width: 100%;
+    text-align: center;
+    color: #F3F8F7;
+}
+
+.appr__card:hover .card__info{
+    top: 268px;    cursor: pointer;
+}
+.appr__carda:hover .card__info{
+    top: 268px;    cursor: pointer;
+}
+.appr__cardb:hover .card__info{
+    top: 268px;    cursor: pointer;
+}
+.appr__cardc:hover .card__info{
+    top: 268px;
+    cursor: pointer;
+}
+.appr__card{
+    background: url('../img/beans.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 400px;
+    max-height: 500px;
+    flex-direction: column;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.appr__carda{
+    background: url('../img/peanut.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 400px;
+    max-height: 500px;
+    flex-direction: column;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.appr__cardb{
+    background: url('../img/pexels-karolina-grabowska-5202281.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 400px;
+    max-height: 500px;
+    flex-direction: column;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.appr__cardc{
+    background: url('../img/top-view-raw-buckwheat-fresh-ingredients-inside-brown-plate-grey-space.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 400px;
+    max-height: 500px;
+    flex-direction: column;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.card__text{
+    font-family: 'fut';
+    font-weight: 500; 
+    width: 100%;
+    text-align: center;
+    color: #F3F8F7;
+    font-size: 13px;
+    width: 200px;
+}
+.card__info{
+    position: absolute;
+    top: 360px;
+    left: 0;
+    transition: .3s;
+    background: #0000008b;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.appr__cards{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+.team__title{
+    font-size: 60px;
+    font-family: 'fut';
+    font-weight: 500; 
+    margin-bottom: 10px;
+}
+.team__text{
+    color: #96a19f;
+    width: 100%;
+    font-family: 'fut';
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+.team__card{
+    display: flex; 
+    gap: 30px;
+}
+.tcard__title{
+    font-size: 26px;
+    font-family: 'fut';
+    font-weight: 500; 
+    margin-bottom: 10px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+.tcard__desc{
+    display: flex;
+    flex-direction: column;
+}
+.tcard__text{
+    color: #4d4d4d;
+    width: 151px;
+    font-family: 'fut';
+    font-weight: 500;
+    margin-bottom: 60px;
+    line-height: 27px;
+    font-size: 15px;
+}
+.tcard__img{
+    width: 297px;
+    height: 396px;
+    border-radius: 6px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: .4s;
+}
+.team__cards{
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+.team__carda{
+    display: flex; 
+    gap: 30px;
+    margin-top: 60px;   
+}
+.team__carda:hover .tcard__img{
+    transform: scale(1.1);
+    -webkit-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+}
+.team__card:hover .tcard__img{
+    transform: scale(1.1);
+    -webkit-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+}
+.team__cardc:hover .tcard__img{
+    transform: scale(1.1);
+    -webkit-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+}
+.team__cardb:hover .tcard__img{
+    transform: scale(1.1);
+    -webkit-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+box-shadow: 33px 26px 18px -12px rgba(34, 60, 80, 0.2);
+}
+.team__cardb{
+    display: flex; 
+    gap: 30px;
+    margin-top: 60px;   
+}
+.team__cardc{
+    display: flex; 
+    gap: 30px;
+}

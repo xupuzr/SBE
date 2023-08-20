@@ -1,0 +1,505 @@
+(function($) {
+
+	$(function() {
+
+		$('table').wrap('<div class="table-wrapper"></div>');
+
+		var IsMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+			$body = $(document.body),
+        	$html = $(document.documentElement);
+	    
+        	
+        function menuWidth() {
+		    var winWidth = $(window).width();
+		    if (winWidth > 1023) {
+		        var width_li = 0, countLi = 0,
+		            menuTWidth = $('.menuTopWrapper .menuTopWrapper__menuTop').outerWidth();
+		        $('.menuTopWrapper .menuTopWrapper__menuTop > li').each(function() {
+		            width_li += Math.ceil($(this).outerWidth());
+		            countLi++;
+		        });
+		        
+		        width_li += 20;
+		
+		        if (menuTWidth < width_li) {
+		            $('.menuTopWrapper .menuTopWrapper__menuTop').append("<li class='last-childrens s3-menu-allin-has'><a href='javascript:void(0);'><span>...</span></a><ul class='level-2'></ul></li>");
+		            width_li += $('.menuTopWrapper .menuTopWrapper__menuTop > li.last-childrens').outerWidth();
+		            for (var i = countLi-1; menuTWidth < width_li; i--) {
+		                width_li -= $('.menuTopWrapper .menuTopWrapper__menuTop > li:not(last-childrens)').eq(i).outerWidth();
+		                $('.menuTopWrapper .menuTopWrapper__menuTop > li.last-childrens > ul').prepend($('.menuTopWrapper .menuTopWrapper__menuTop > li:not(last-childrens)').eq(i));    
+		            }
+		            $('.menuTopWrapper .menuTopWrapper__menuTop').removeAttr('style');
+		
+		        }        
+		    } else {
+		        $('.menuTopWrapper .menuTopWrapper__menuTop > li').removeAttr('style');
+		    }
+		}
+
+        menuWidth();
+
+
+		$('.menuTopWrapper__menuTop').s3MenuAllIn({
+	        type: 'bottom',
+	        showTime: 250,
+	        hideTime: 250
+	    });  
+	    
+	    
+	    $('.menuTopWrapper2__menuTop').s3MenuAllIn({
+	        type: 'dropdown'
+	        
+	    });
+	    
+        $('.menuTopWrapper2__menuTop li.s3-menu-allin-has>a').append('<span class="plusRightMenu"></span>');
+        
+        $('.menuTopWrapper2__menuTop li a').on('click', function(event){
+	      
+		      if(!$(event.target).is('.plusRightMenu')){
+		        var thisHref = $(this).attr('href');
+		          
+		          document.location.href = thisHref;
+		          
+		          return false
+		      }
+	    });
+        
+
+	    $('.burger').on('click', function(){
+	    	if ($('.menu_block2').hasClass('opened')) {
+		    	$('.menu_block2').removeClass('opened')
+		    	$('.menuTopWrapper2').removeClass('opened')
+		    	$('.burger').removeClass('opened')
+		    	$html.removeClass('overflowHidden');
+	    	} else {
+		    	$('.menu_block2').addClass('opened')
+		    	$('.menuTopWrapper2').addClass('opened')
+		    	$('.burger').addClass('opened')
+		    	$html.addClass('overflowHidden');
+	    	}
+	    })
+
+	    $body.on('click touchstart', function(e) {
+            if ( $(e.target).closest($('.menuTopWrapper2, .menuTopWrapper2__menuTop').add($('.burger'))).length ) return;
+            if ($('.menu_block2').hasClass('opened')) {
+	            $('.menu_block2').add($('.burger')).removeClass('opened');
+	            $('.menuTopWrapper2').add($('.burger')).removeClass('opened');
+	            $html.removeClass('overflowHidden');
+            }
+        });
+
+		var owltop = $('.topslider');
+		owltop.on('initialized.owl.carousel',function(){
+			$(this).show();	
+		});
+		
+	    owltop.owlCarousel({
+	        nav: true,
+	        loop: true,
+	        dots: false,
+	        autoplayTimeout: 5000,
+	        smartSpeed: 500,
+	        margin: 10,
+	        responsiveClass: true,
+	        
+	        responsive: {
+
+	        	0:{
+		            items:1,
+		            nav:true
+		        },
+		        480:{
+		            items:1,
+		            nav:true
+		        },
+		        762:{
+		            items:2,
+		            nav:true
+		        },
+		        768:{
+		            items:3,
+		            nav:true
+		        },
+		        769:{
+		            items:3,
+		            nav:true
+		        },
+		        1000:{
+		            items:4,
+		            nav:true
+		        }
+
+
+	        }
+
+	    });
+
+	    $('.botslider').owlCarousel({
+	        nav: false,
+	        items: 1,
+	        loop: true,
+	        dots: true,
+	        autoplay:true, //Автозапуск слайдера
+    		smartSpeed:1000, //Время движения слайда
+	    });
+
+	    $('.topslid_but').on('click', function(){
+	    	if ($('.topslid_but').hasClass('opened')) {
+				$html.removeClass('overflowHiddenForm').removeAttr('style');
+				$(window).scrollTop($pos);
+	    	} else {
+	    		$pos = $(window).scrollTop();
+		    	$('.form_block').addClass('opened');	
+		    	$html.addClass('overflowHiddenForm').css('top',-$pos);
+	    	}
+	    });
+	    
+	    $('.form_block .close').on("click", function(event){
+                $('.form_block').removeClass('opened');
+                $html.removeClass('overflowHiddenForm').removeAttr('style');
+                $(window).scrollTop($pos);
+        }); 
+	    
+		$body.on("click touchstart", function(event){
+            if ($(event.target).closest($('.topslid_but').add($('.form_block .form_in'))).length) return;
+            if ($('.form_block').hasClass('opened')) {
+                $('.form_block').removeClass('opened');
+                $html.removeClass('overflowHiddenForm').removeAttr('style');
+                $(window).scrollTop($pos);
+            }
+        }); 
+		
+	   	
+        $body.on('keyup', function(event){
+            if (event.keyCode == 27 && $('.form_block').hasClass("opened")) {
+                $('.form_block').removeClass("opened");
+                $html.removeClass('overflowHiddenForm');
+                $(window).scrollTop($pos);
+                
+            }
+        });
+        
+        
+        
+        
+        
+        $('.mobile_form').on('click', function(){
+	    	if ($('.mobile_form').hasClass('opened')) {
+				$html.removeClass('overflowHiddenForm');
+				$(window).scrollTop($pos);
+	    	} else {
+	    		$pos = $(window).scrollTop();
+		    	$('.form_block2').addClass('opened');	
+		    	$html.addClass('overflowHiddenForm');
+	    	}
+	    });
+	    
+	    $('.form_block2 .close').on("click", function(event){
+                $('.form_block2').removeClass('opened');
+                $html.removeClass('overflowHiddenForm');
+                $(window).scrollTop($pos);
+        }); 
+	    
+		$body.on("click touchstart", function(event){
+            if ($(event.target).closest($('.mobile_form').add($('.form_block2 .form_in2'))).length) return;
+            if ($('.form_block2').hasClass('opened')) {
+                $('.form_block2').removeClass('opened');
+                $html.removeClass('overflowHiddenForm');
+                $(window).scrollTop($pos);
+            }
+        }); 
+		
+	   	
+        $body.on('keyup', function(event){
+            if (event.keyCode == 27 && $('.form_block2').hasClass("opened")) {
+                $('.form_block2').removeClass("opened");
+                $html.removeClass('overflowHiddenForm');
+                $(window).scrollTop($pos);
+                
+            }
+        });
+        
+        
+        
+        
+		if (IsMobile) {
+			$('.menuTopWrap').addClass('responsive');
+			$('.burger').addClass('responsive');
+			$('.top_block_wr').addClass('responsive');
+			$('.menuBottomWrap').addClass('responsive');
+			$('.menu_block').addClass('responsive');
+			
+		} else {
+			$('.menuTopWrap').removeClass('responsive');
+			$('.burger').removeClass('responsive');
+			$('.top_block_wr').removeClass('responsive');
+			$('.menuBottomWrap').removeClass('responsive');
+			$('.menu_block').removeClass('responsive');
+		}
+		
+		
+		$('.topslid_but').on('click', function() {
+            $thisTariff = $(this).parent();
+            
+            $('.form_block textarea.tariff_note')
+                .removeAttr('disabled')
+                .val('\n' + $thisTariff.find('.title').text() + '\n\n' + $thisTariff.find('.anonce').text() + '\n\n' + $thisTariff.find('.price').text());
+        });
+        
+    	s3From.initForms(".form_block", function() {
+            $('.form_block textarea.tariff_note')
+                .removeAttr('disabled')
+                .val('\n' + $thisTariff.find('.title').text() + '\n\n' + $thisTariff.find('.anonce').text() + '\n\n' + $thisTariff.find('.price').text());
+        });
+        
+        
+        
+        
+        $('.mobile_form').on('click', function() {
+            $thisTariff = $(this).parent();
+            
+            $('.form_block2 textarea.tariff_note')
+                .removeAttr('disabled')
+                .val('\n' + $thisTariff.find('.title').text() + '\n\n' + $thisTariff.find('.anonce').text() + '\n\n' + $thisTariff.find('.price').text());
+        });
+        
+    	s3From.initForms(".form_block2", function() {
+            $('.form_block2 textarea.tariff_note')
+                .removeAttr('disabled')
+                .val('\n' + $thisTariff.find('.title').text() + '\n\n' + $thisTariff.find('.anonce').text() + '\n\n' + $thisTariff.find('.price').text());
+        });
+		
+		 
+	});
+})(jQuery);
+
+
+(function() {
+    
+        function coords(str) {
+            return str.split(',');
+        }
+    
+    
+        function init(options) {
+            options.center = coords(options.center);
+    
+            $.each(options.data, function(key, item) {
+                item.coords = coords(item.coords);
+            });
+    
+            if (options.type == 'google') {
+    
+                google.maps.event.addDomListener(window, 'load', function() {
+                    
+                    var map = new google.maps.Map(document.getElementById(options.id), {
+                        zoom: parseInt(options.zoom),
+                        scrollwheel: false,
+                        center: new google.maps.LatLng(options.center[0], options.center[1])
+                    });
+                    
+                    var styles1 = [
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#f7f1df"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#d0e3b4"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.medical",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#fbd3da"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#bde6ab"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffe15f"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#efd151"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "black"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.airport",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#cfb2db"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#a2daf2"
+            }
+        ]
+    }
+];
+                
+                map.setOptions({styles: styles1});
+    
+                    $.each(options.data, function(key, item) {
+                        
+    
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(item.coords[0], item.coords[1]),
+                            map: map,
+                            title: item.name
+                        });
+    
+                        var infowindow = new google.maps.InfoWindow({
+                            content: '<div class="baloon-content">' +
+                                        '<h3 style="margin: 0; padding-bottom: 3px;">' + item.name + '</h3>' +
+                                        item.desc +
+                                    '</div>'
+                        });
+    
+                        google.maps.event.addListener(marker, 'click', function() {
+                            infowindow.open(map, marker);
+                        });
+    
+                    });
+                });
+    
+            } else {
+    
+                ymaps.ready(function() {
+    
+                    var map = new ymaps.Map(options.id, {
+                        center: options.center,
+                        zoom: options.zoom,
+                        behaviors: ['drag', 'rightMouseButtonMagnifier'],
+                    });
+    
+                    map.controls.add(
+                        new ymaps.control.ZoomControl()
+                    );
+    
+                    var MyBalloonContentLayoutClass = ymaps.templateLayoutFactory.createClass(
+                        '<div class="baloon-content" style="padding: 0 10px;">' +
+                            '<h3 style="margin: 0;">$[properties.name]</h3>' +
+                            '$[properties.desc]' +
+                        '</div>'
+                    );
+    
+                    var myCollection = new ymaps.GeoObjectCollection();
+    
+                    $.each(options.data, function(key, item) {
+                        myCollection.add(new ymaps.Placemark(
+                            item.coords,
+                            item, 
+                            {balloonContentLayout: MyBalloonContentLayoutClass}
+                        ));
+                    });
+    
+                    map.geoObjects.add(myCollection);
+    
+                });
+    
+            }
+    
+        }
+    
+        window.mjsMap = init;
+    
+    })();
